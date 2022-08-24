@@ -29,8 +29,8 @@ if (process.platform == 'darwin') {
   run(`echo "${bin}" >> $GITHUB_PATH`);
 } else if (process.platform == 'win32') {
   if (mongoVersion != '5.0') {
-    run(`choco uninstall mongodb`)
-    run(`choco install mongodb --force --allow-downgrade --version=${mongoVersion}`)
+    run(`choco uninstall mongodb.install`)
+    run(`choco install mongodb.install --force --allow-downgrade --version=${mongoVersion}`)
   }
 
   run(`sc config MongoDB start= auto`);
