@@ -6,7 +6,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-18.04, macos-12, macos-11, macos-10.15]
+        os: [ubuntu-18.04, macos-12, macos-11, macos-10.15, windows-2019, windows-2022]
         mongodb-version: [6.0, 5.0, 4.4, 4.2]
         include:
           # not available for ubuntu-22.04 yet
@@ -17,10 +17,6 @@ jobs:
             mongodb-version: 5.0
           - os: ubuntu-20.04
             mongodb-version: 4.4
-          - os: windows-2022
-            mongodb-version: 5.0
-          - os: windows-2019
-            mongodb-version: 5.0
     steps:
     - uses: actions/checkout@v2
     - uses: ./.

@@ -29,7 +29,7 @@ if (process.platform == 'darwin') {
   run(`echo "${bin}" >> $GITHUB_PATH`);
 } else if (process.platform == 'win32') {
   if (mongoVersion != '5.0') {
-    throw `MongoDB version not supported on Windows: ${mongoVersion}`;
+    run(`choco install mongodb --force --allow-downgrade --version=${mongoVersion}`)
   }
 
   run(`sc config MongoDB start= auto`);
